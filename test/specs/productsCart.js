@@ -2,7 +2,7 @@ import { expect, browser, $ } from '@wdio/globals';
 
 describe('Test 2 -Add product to the cart', () => {
   it('Should log in to the "Swag Labs" page', async () => {
-    await browser.url(`https://www.saucedemo.com/`);
+    await browser.url(`/`);
     await $('#user-name').setValue('standard_user');
     await $('#password').setValue('secret_sauce');
     await $('#login-button').click();

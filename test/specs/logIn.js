@@ -1,15 +1,14 @@
 import { expect, browser, $ } from '@wdio/globals';
 
 describe('Test 1 - Perform Login', () => {
-  it('Should log in to the "Swag Labs" page', async () => {
-    await browser.url(`https://www.saucedemo.com/`);
+  beforeEach(async () => {
+    await browser.url(`/`);
     await $('#user-name').setValue('standard_user');
     await $('#password').setValue('secret_sauce');
     await $('#login-button').click();
 
     const actualUrl = await browser.getUrl();
     const expectedUrl = 'https://www.saucedemo.com/inventory.html';
-
     expect(actualUrl).toBe(expectedUrl);
   });
 
